@@ -23,7 +23,9 @@ public class WebHdfsClientTest {
 
     @Test
     public void createAndWriteFile() {
-        System.out.println(webHdfsClient.createAndWriteFile("/app/clusterdata/keyword.dic", "/gome/hello1/file", true, 1024 * 1024));
+        long start = System.currentTimeMillis();
+        System.out.println(webHdfsClient.createAndWriteFile("/home/lipeng-ds/software/cn_windows_7_ultimate_with_sp1_x64_dvd_618537.iso", "/gome/hello1/file", true, 1024 * 1024));
+        System.out.println(System.currentTimeMillis() - start);
     }
 
     @Test

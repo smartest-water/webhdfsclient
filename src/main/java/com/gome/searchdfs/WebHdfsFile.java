@@ -54,9 +54,9 @@ public class WebHdfsFile {
 
     public void flushAndClose(){
         try {
-            fileOutputStream.close();
-            streamWriter.close();
             bufferedWriter.close();
+            streamWriter.close();
+            fileOutputStream.close();
             webHdfsClient.createAndWriteFile(tmpFile, dstFile, overwrite, buffersize);
             file.deleteOnExit();
         } catch (IOException e) {
